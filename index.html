@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Elm ruler gata</title>
+        <style>
+            .elm-div {
+                background: orange;
+            }
+            .banner {
+                font-size: 2em;
+            }
+        </style>
+    </head>
+<body>
+    <div id="hello"></div>
+    <script src="js/hello2.js"></script>
+    <script>
+        const myDiv = document.getElementById("hello");
+        const app = Elm.HelloTwo.embed(myDiv);
+    </script>
+
+</body>
+</html>
