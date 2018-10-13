@@ -1,6 +1,6 @@
 # Elm tutorial
 My first steps with elm
-
+Written in elm 0.18
 
 
 ## Compile code
