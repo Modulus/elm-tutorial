@@ -1,38 +1,42 @@
-module AnotherHello exposing (..)
+module AnotherHello exposing (checkStatus, createLi, main, renderList, statusChecks)
 
 import Html exposing (..)
 
-checkStatus : Int -> String
 
+checkStatus : Int -> String
 checkStatus status =
     if status == 200 then
         "Alle sehr gut jah!"
+
     else if status == 404 then
         "Page not found"
+
     else
         "Unknown response"
 
 
 statusChecks : List String
-statusChecks = 
-    [
-        checkStatus 200
-        ,checkStatus 404
-        ,checkStatus 418
+statusChecks =
+    [ checkStatus 200
+    , checkStatus 404
+    , checkStatus 418
     ]
 
-renderList : List String -> Html msg  
+
+renderList : List String -> Html msg
 renderList lst =
-    lst 
+    lst
         |> List.map createLi
         |> ul []
 
-createLi : String -> Html msg
-createLi str = 
-    li [] [text str]
 
-main = 
-    div [] [
-        h1 [] [ text "List of statuses: "]
+createLi : String -> Html msg
+createLi str =
+    li [] [ text str ]
+
+
+main =
+    div []
+        [ h1 [] [ text "List of statuses: " ]
         , renderList statusChecks
-    ]
+        ]
